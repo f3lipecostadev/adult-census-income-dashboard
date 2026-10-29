@@ -1,0 +1,16 @@
+# Tool configuration only (this project is an app, not a distributable package).
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"adult_dashboard/findings.py" = ["E501"]  # long Markdown lines
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]
